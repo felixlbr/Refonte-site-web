@@ -1,0 +1,115 @@
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./css/radio.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="./image/logo.ico" />
+  <title>CASBT - Accueil</title>
+
+<div id="player">
+  <div class="album">
+  </div>
+  <div class="info">
+    <div class="progress-bar">
+      <div class="time--current">0 : 00</div>
+      <div class="time--total"><!-- DYNAMIQUE --></div>
+      <div class="fill"></div>
+    </div>
+    <div class="currently-playing">
+      <h2 class="song-name">Lecture du site</h2>
+      <h3 class="artist-name">CASBT - Communauté d'agglomération Sud Basse-Terre</h3>
+    </div>
+    <div class="controls">
+      <div class="volume"><i class="fas fa-volume-up"></i></div>
+      <div class="mute"><i class="fas fa-volume-xmark"></i></div>
+      <div class="play"><i class="fas fa-play"></i></div>
+      <div class="pause"><i class="fas fa-pause"></i></div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  const audio = new Audio('./audio/audio.mp3');
+
+  const normalizeTime = time => {
+    return time < 10 ? `0${time}` : `${time}`
+  }
+
+  const getNormalizeTime = seconds => {
+      let minutes = Math.floor(seconds / 60)
+      return `${minutes} : ${normalizeTime(Math.round(seconds - (minutes * 60)))}`
+  }
+
+  const switchView = (firstClass, secondClass, firstCallBack, secondCallback) => {
+    $(`.${firstClass}`).click(() => {
+      firstCallBack();
+      $(`.${firstClass}`).hide();
+      $(`.${secondClass}`).show();
+    });
+
+    $(`.${secondClass}`).click(() => {
+      secondCallback();
+      $(`.${secondClass}`).hide();
+      $(`.${firstClass}`).show();
+    });
+  }
+
+  $('.pause').hide();
+  $('.mute').hide();
+
+  $('#player').hover(() => {
+    $('.info').toggleClass('up');
+  });
+
+  $('.heart').click(() => {
+    $('.heart').toggleClass('clicked');
+  });
+
+  $('.loop').click(() => {
+    $('.loop').toggleClass('clicked');
+  });
+
+  $('.previous').click(() => {
+    audio.currentTime = 0
+  })
+
+  $('.next').click(() => {
+    audio.currentTime = audio.duration-6
+  })
+
+  switchView('volume', 'mute', () => audio.volume = 0, () => audio.volume = 1)
+  switchView('play', 'pause', () => audio.play(), () => audio.pause())
+
+  audio.onloadedmetadata = () => {
+    $('.time--total').text(`${getNormalizeTime(audio.duration)}`)
+  }
+
+  audio.ontimeupdate = () => {
+    const percentage = (audio.currentTime / audio.duration) * 100;
+    const remaining = Math.round(audio.duration - audio.currentTime)
+    
+    $('.fill').css('width', `${percentage}%`)
+    $('.time--total').text(`${getNormalizeTime(remaining)}`)
+    $('.time--current').text(`${getNormalizeTime(audio.currentTime)}`)
+  }
+
+  audio.onended = () => {
+    this.currentTime = 0;
+    if(!$('.loop').hasClass('clicked')) {
+      console.log('Bouloup')
+      $('.play').show();
+      $('.pause').hide();
+      audio.pause();
+    } else {
+      audio.play();
+    }
+  }
+
+
+</script>
