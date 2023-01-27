@@ -1,0 +1,84 @@
+/* BALISES */
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+}
+
+/* ID */
+
+#toggle-btn {
+	padding: 0.5em;
+	font-weight: 800;
+	margin-right: 5 px;
+}
+#toggle-btn:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+/* CLASS */
+
+.dark-mode-toggle {
+	background-color: black;
+	color: white;
+}
+.dark-mode-theme {
+	background-color: black;
+	color: white;
+}
+
+/*FAQ*/
+
+div.dark-mode-theme .reponse{
+	color:grey;
+}
+div.dark-mode-theme .question{
+	background-color: white;
+	color:black;
+}
+div.dark-mode-theme .question:hover{
+	color: red;
+}
+div.dark-mode-theme #nav li.selected{
+	border-bottom:solid white;
+}
+div.dark-mode-theme #nav li.notSelected:hover, div.dark-mode-theme #nav li.selected:hover{
+	border-bottom:solid yellow;
+}
+div.dark-mode-theme .question-reponse{
+	background-color: white;
+	border: solid white;
+}
+div.dark-mode-theme  h2, div.dark-mode-theme h1{
+	color:white;
+}
+
+/*accueil*/
+
+div.dark-mode-theme a:hover{
+	color : blue;
+}
+div.dark-mode-theme hr {
+	background-color: pink;
+}
+div.dark-mode-theme p,div.dark-mode-theme a{
+	color: cyan;
+}
+
+div.dark-mode-theme h3, div.dark-mode-theme h3>a{
+	color: yellow;
+}
+
+/*actualité*/
+
+div.dark-mode-theme .titre{
+    background-color: red;
+    color: yellow;
+}
+
+/*bandeau*/
+
+div.dark-mode-theme > .bandeau > nav > #menu a{
+	color : blue;
+}

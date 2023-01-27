@@ -1,0 +1,11 @@
+/* CLASS */
+
+.modal-background{
+    background-size: cover;
+    background-image: url("./../image/popup.png");
+    filter: blur(4px);
+}
+.title, .subtitle{
+    color: aliceblue;
+}
+

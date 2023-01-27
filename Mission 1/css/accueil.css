@@ -1,0 +1,65 @@
+a{
+	color : black;
+	text-decoration: none;
+}
+.content{
+    padding: 50px;
+    padding-bottom: 3%;
+}
+
+#demarcheContent, #divers{
+	display : flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#divers{
+	justify-content: space-evenly;
+}
+#demarcheContent > div.divDemarche > img{
+	width: 102px;
+}
+#divers img{
+	width : 25px;
+}
+#requete1, #requete2{
+	display : flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.divDemarche, #contact, #faq{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 1%;margin-right: 1%;
+}
+#contact, #faq{
+	margin-bottom: 25px;
+}
+#excel{
+	width: 450px;
+	height: 380px;
+	
+}
+.divDemarche{
+	padding-bottom: 5%;
+}
+.underline-02{
+	align-self: flex-start;
+}
+#faq >p{
+    display: flex;
+    flex-direction: column;
+}
+#faq > p > a{
+    padding: 5px 0px 5px 0px;
+}
+#requete1 img,#requete2 img{
+	width: 400px;
+	margin: 1%;
+}
+h3{
+	border-bottom: solid 5px;
+	border-color: #817b7a80;
+}

@@ -1,0 +1,38 @@
+/* BALISES */
+
+hr{
+    color: aqua;
+}
+
+footer{
+    padding-bottom: 15px;
+}
+
+/* ID */
+
+#carte{
+    visibility: hidden;
+}
+
+#info2{
+    display: grid;
+    grid-template-columns: 50px auto;
+    font-size: 20px;
+}
+
+#theme{
+    margin-bottom: 0px;
+}
+
+/* CLASS */
+
+.content{
+    padding: 50px;
+    padding-bottom: 0%;
+}
+.divicone{
+    width: 80%;
+    margin-bottom: 100px;
+}
+
+

@@ -1,0 +1,76 @@
+/* BALISES */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+footer{
+    padding-bottom: 15px;
+}
+/* ID */
+
+#contenu{
+    display : grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#theme{
+    margin-bottom: 0px;
+}
+
+/* CLASS */
+
+.content{
+    padding: 50px;
+    padding-bottom: 3%;
+}
+.content img{
+    position : relative;
+    display: block;
+    margin-left: auto;
+    margin-right : auto;
+    width: 80%;
+}
+.titre{
+    background-color: rgb(0, 91, 0);
+    position : relative;
+    top : -12%;
+    width: 80%;
+    font-size:medium;
+    color: white;
+    padding: 3%;
+    font-weight: bold;
+}
+.cell{
+    display: grid;
+}
+
+/* MEDIA QUERRY */
+
+@media screen and (min-width : 1200px){
+    #contenu{
+		width : 1085px;
+    } 
+}
+@media screen and (max-width : 750px){
+    #contenu{
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .titre{
+        position : relative;
+        top : -7%;
+        font-size: small;
+    }
+}
+ 

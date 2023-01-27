@@ -1,0 +1,173 @@
+/* BALISES */
+
+*{
+	padding : 0;
+	margin: 0;
+	line-height: 1;
+}
+header{
+	background-image: url("../image/cadreJungle-wbg.png");
+	background-size: cover;
+	z-index: 1;
+	background-color: white;
+	box-shadow: 0px 5px 15px grey;
+}
+header a{
+	color : inherit;
+}
+nav{
+	position: sticky;
+	top:0px;
+	width: auto;
+	margin-left: 20%;  margin-right: 20%;
+	padding-top: 1%;
+	text-align: center;
+	padding-bottom: 1%;
+}
+footer{
+	background-color: #cecece;
+	display: flex;
+	font-family: Calibri;
+	
+	flex-direction: row;
+}
+
+/* ID */
+
+#menu{
+	display : grid;
+	margin : 0;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+}
+#menu > li {
+	grid-column: span 1;
+	text-align: center;
+	list-style: none;
+	font-family: "Calibri";
+	font-weight: 500;
+	font-size: 165%;
+}
+#menu > li > a {
+	text-decoration: none;
+}
+#menu > li > a:hover {
+	text-decoration: none;
+	color: green;
+}
+#menu > li > a:focus {
+	font-weight: bold;
+}
+#logoTop{
+	padding-top: 1.5%;
+	display: block;
+	width: 15%;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: content-box;
+}
+
+.divFooter{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.divFooter img{
+	width: 20%;
+}
+.divFooter #logoBottom{
+	width: 25%;
+}
+.divFooter p{
+	margin: 5%;
+}
+#theme{
+    margin-bottom: 0px;
+}
+/* CLASS */
+
+.bord{
+	border-right: solid;
+}
+.hvr-grow {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+/* Partie float */
+.hvr-float {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+	-webkit-transform: translateY(-8px);
+	transform: translateY(-8px);
+}
+
+/* MEDIA QUERRY */
+
+@media screen and (min-width : 1200px){
+	header{
+		height: 215px;
+		display: grid;
+		grid-template-rows: auto auto;
+	}
+	#logoTop{
+		padding-top: 17px;
+		height: 138px;
+		width: 177px;
+	}
+	nav{
+		grid-row :auto;
+	}
+}
+@media screen and (max-width : 750px){
+	#menu > li {
+		font-size: 105%;
+	}
+
+	footer p{
+		font-size: smaller;
+	}
+}
+@media screen and (max-width : 600px){
+	footer{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+	footer .divFooter img{
+		width:50px;
+	}
+	footer .divFooter #logoBottom{
+		width: 100px;
+	}
+	.divFooter{
+		margin:2%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.divFooter p{
+		margin:2%;
+	}
+}

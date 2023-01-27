@@ -1,0 +1,54 @@
+/* BALISES */
+
+hr{
+    color: aqua;
+}
+
+footer{
+    padding-bottom: 15px;
+}
+
+/* ID */
+
+#carte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+}
+#info2{
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: auto auto;
+    font-size: 20px;
+}
+#info1{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    font-size: 20px;
+}
+
+#theme{
+    margin-bottom: 0px;
+}
+
+#theme{
+    margin-bottom: 0px;
+}
+
+/* CLASS */
+
+.content{
+    padding: 50px;
+    padding-bottom: 3%;
+}
+.divicone{
+    width: 80%;
+}
+
+
+
+  
+  
